@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101526"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Anime Prompts"><title>Anime → NovelAI Character Prompt</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1120;--panel:#171d30;--panel2:#202941;--line:#35415b;--text:#f1f5ff;--sub:#aab7d0;--accent:#a69cff;--accent2:#6dd9cf;--warn:#ffd18a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top left,#24234b 0%,transparent 42%),var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:15px;line-height:1.55}button,input,textarea,select{font:inherit}input,textarea,select{font-size:16px}button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}button{cursor:pointer}header,.wrap{max-width:1160px;margin:0 auto;padding:0 20px}header{padding-top:32px;padding-bottom:20px}h1{margin:2px 0 4px;font-size:clamp(25px,5vw,38px);letter-spacing:-.04em}.eyebrow{font-size:12px;letter-spacing:.15em;font-weight:800;color:var(--accent2)}.intro{color:var(--sub);margin:8px 0}.panel{border:1px solid var(--line);background:#171d30e8;border-radius:19px;padding:20px;margin:0 0 18px;box-shadow:0 12px 38px #05071340}.searchbar{display:flex;gap:9px}.input,.select,.textarea{border:1px solid var(--line);border-radius:11px;background:#0f1629;color:var(--text);padding:12px;outline:none;min-width:0}.input:focus,.select:focus,.textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px #a69cff22}.searchbar .input{flex:1;font-size:16px}button{border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--panel2);color:var(--text);font-weight:700;transition:.15s}button:hover:not(:disabled){filter:brightness(1.15)}button:disabled{opacity:.45;cursor:not-allowed}.primary{border-color:transparent;background:linear-gradient(120deg,#7962e4,#aa8ef8);color:white}.secondary{background:#1c3440;border-color:#34565c;color:#b6fff4}.muted{color:var(--sub);font-size:13px}.controls{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:15px}.controls label{display:flex;gap:7px;align-items:center;font-size:13px;color:var(--sub)}.controls .select{padding:8px}.controls input[type=checkbox]{accent-color:#a69cff;width:16px;height:16px}.status{min-height:25px;color:var(--sub);font-size:13px;margin:12px 0 0}.status.error{color:#ffaaa8}.status.success{color:#84ebc9}.resultsbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:14px}.resultsbar h2{font-size:20px;margin:0}.toolbar{display:flex;gap:8px;flex-wrap:wrap}.matches{display:flex;gap:10px;overflow:auto;padding:3px 0 8px;margin:0 0 12px}.match{min-width:180px;max-width:220px;text-align:left;display:flex;align-items:center;gap:9px}.match img{width:45px;height:63px;object-fit:cover;border-radius:5px;background:#30384e}.match span{font-size:12px;line-height:1.4}.match.active{border-color:var(--accent);background:#34345d}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(315px,1fr));gap:14px}.character.picked{border-color:#f4d17e;box-shadow:0 0 0 2px #f4d17e55}.character{padding:14px;border:1px solid var(--line);background:var(--panel);border-radius:15px;display:flex;flex-direction:column;gap:11px}.head{display:flex;gap:12px;min-height:116px}.portrait{height:116px;width:88px;flex-shrink:0;object-fit:cover;object-position:top;border-radius:9px;background:var(--panel2)}.details{min-width:0;flex:1}.details h3{font-size:17px;margin:0;line-height:1.45;overflow-wrap:anywhere}.native{font-size:13px;color:var(--accent2);margin-top:3px}.chip{display:inline-flex;margin-top:7px;border:1px solid var(--line);border-radius:5px;padding:1px 7px;font-size:11px;color:var(--sub)}.charlabel{display:block;font-size:12px;color:var(--sub);margin:0 0 5px}.textarea{width:100%;resize:vertical;font-size:12.5px;line-height:1.65;min-height:96px}.extras{min-height:46px}.row{display:flex;gap:8px;align-items:center;justify-content:space-between}.row .note{color:var(--sub);font-size:11px}.empty{padding:35px 15px;text-align:center;color:var(--sub);border:1px dashed var(--line);border-radius:13px}.random-result{margin:0 0 15px;padding:14px;border:1px solid #a69cff;border-radius:13px;background:#262747}.random-result .row{justify-content:flex-start;flex-wrap:wrap}.random-result strong{font-size:17px}.random-result img{height:82px;width:62px;object-fit:cover;border-radius:7px}.random-result textarea{margin-top:10px}.footnote{font-size:12px;color:var(--sub);padding-bottom:33px}.hidden{display:none!important}a{color:#c6bdff}.loader{display:inline-block;width:13px;height:13px;vertical-align:-2px;border-radius:50%;border:2px solid #aaa0ff;border-top-color:transparent;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:560px){header,.wrap{padding-left:14px;padding-right:14px}header{padding-top:20px}.panel{padding:15px}.searchbar{flex-wrap:wrap}.searchbar .input{flex-basis:100%}.searchbar button{width:100%}.grid{grid-template-columns:1fr}.resultsbar h2{font-size:17px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">ANIME CHARACTER PROMPT BUILDER</div><h1>アニメ → NovelAIプロンプト</h1><p class="intro">作品名を検索して、登場する女性キャラクターのプロンプトをまとめて生成します。</p></header>
+<main class="wrap"><section class="panel"><form id="searchForm"><label for="animeTitle" class="charlabel">アニメ作品名（日本語・英語・ローマ字・略称）</label><div class="searchbar"><input class="input" id="animeTitle" type="search" placeholder="例：ガルパン / ぼざろ / リゼロ" autocomplete="off" required><button class="primary" id="searchBtn" type="submit">作品を検索</button></div></form>
+<div class="controls"><label>表示対象 <select id="genderMode" class="select"><option value="female">女性と登録されたキャラクター</option><option value="female_unknown">女性＋性別未登録</option><option value="all">すべて（確認用）</option></select></label><label>名前の形式 <select id="nameMode" class="select"><option value="romaji">ローマ字名（基本）</option><option value="english">英語名を優先</option><option value="native">原語名を優先</option></select></label><label><input id="solo" type="checkbox" checked>1girl / solo</label><label><input id="quality" type="checkbox" checked>品質タグ</label></div><div class="muted" style="margin-top:9px">略称例：ガルパン、ぼざろ、リゼロ、転スラ、推しの子。見つからない場合は正式名称で検索してください。</div><div id="status" class="status" role="status">アニメタイトルを入力してください。</div></section>
+<div id="selection" class="hidden"><div class="resultsbar"><h2>該当する作品を選択</h2><span class="muted">検索結果から原作・シリーズを選べます</span></div><div id="matches" class="matches"></div></div>
+<section id="results" class="hidden"><div class="resultsbar"><div><h2 id="resultTitle">キャラクター一覧</h2><div id="count" class="muted"></div></div><div class="toolbar"><button id="randomPick" class="primary" type="button">🎲 ランダムで1人選ぶ</button><button id="copyAll" class="secondary">全件コピー</button><button id="download" type="button">CSV保存</button></div></div><div id="randomResult" class="random-result hidden" aria-live="polite"></div><div id="grid" class="grid"></div><div id="bottomStatus" class="status"></div></section>
+<section class="panel footnote"><strong>使用上の注意</strong><p>キャラクター名・作品名を使った識別用プロンプトを自動生成します。髪色、服装、目の色などの外見特徴はデータベースに保証された項目がないため自動確定しません。各カードの「追加する外見・衣装タグ」で指定してください。作品・キャラクター情報と画像は <a href="https://anilist.co/" target="_blank" rel="noopener">AniList</a> から取得します。表示されるのはデータベースに登録されている人物で、登場女性キャラクターの完全な網羅を保証しません。NovelAIへの画像生成要求は送信しません。</p><p>検索にはオンライン接続が必要です。<a href="https://docs.novelai.net/ja/image/tags/" target="_blank" rel="noopener">NovelAI公式タグガイド</a>を参照してください。キャラクター名の認識精度はNovelAIモデル・学習状況に依存します。</p></section></main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);let choices=[],current=null,characters=[],abort=null,requestId=0,randomId=null;
+const mediaSearch=`query($search:String){Page(page:1,perPage:12){media(search:$search,type:ANIME,sort:SEARCH_MATCH){id title{romaji english native} coverImage{medium} format seasonYear popularity}}}`;
+// Common Japanese shorthand names. AniList title search is applied after resolution.
+const aliases={
+'ガルパン':'Girls und Panzer','がるぱん':'Girls und Panzer',
+'ぼざろ':'Bocchi the Rock!','ぼっちざろっく':'Bocchi the Rock!',
+'リゼロ':'Re:Zero kara Hajimeru Isekai Seikatsu','りぜろ':'Re:Zero kara Hajimeru Isekai Seikatsu',
+'このすば':'Kono Subarashii Sekai ni Shukufuku wo!',
+'転スラ':'Tensei Shitara Slime Datta Ken','てんすら':'Tensei Shitara Slime Datta Ken',
+'推しの子':'Oshi no Ko','おしのこ':'Oshi no Ko',
+'俺ガイル':'Yahari Ore no Seishun Love Comedy wa Machigatteiru.',
+'はがない':'Boku wa Tomodachi ga Sukunai',
+'ごちうさ':'Gochuumon wa Usagi desu ka?',
+'けいおん':'K-On!','きんモザ':'Kiniro Mosaic',
+'ゆるキャン':'Yuru Camp','ゆるきゃん':'Yuru Camp',
+'わたてん':'Watashi ni Tenshi ga Maiorita!',
+'まどマギ':'Mahou Shoujo Madoka Magica',
+'とある':'Toaru Majutsu no Index','超電磁砲':'Toaru Kagaku no Railgun','レールガン':'Toaru Kagaku no Railgun',
+'ダンまち':'Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka',
+'無職転生':'Mushoku Tensei','フリーレン':'Sousou no Frieren',
+'ハルヒ':'Suzumiya Haruhi no Yuuutsu',
+'冴えカノ':'Saenai Heroine no Sodatekata','冴えない彼女':'Saenai Heroine no Sodatekata',
+'青ブタ':'Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai',
+'よりもい':'Sora yori mo Tooi Basho',
+'リコリコ':'Lycoris Recoil',
+'着せ恋':'Sono Bisque Doll wa Koi wo Suru',
+'かぐや様':'Kaguya-sama wa Kokurasetai',
+'五等分':'5-toubun no Hanayome',
+'防振り':'Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.',
+'慎重勇者':'Shinchou Yuusha',
+'オバロ':'Overlord',
+'ヒロアカ':'Boku no Hero Academia',
+'鬼滅':'Kimetsu no Yaiba',
+'呪術':'Jujutsu Kaisen',
+'進撃':'Shingeki no Kyojin',
+'SAO':'Sword Art Online',
+'シュタゲ':'Steins;Gate',
+'ガンダム水星':'Kidou Senshi Gundam: Suisei no Majo',
+'水星の魔女':'Kidou Senshi Gundam: Suisei no Majo',
+'ウマ娘':'Uma Musume: Pretty Derby',
+'プリキュア':'Futari wa Precure',
+'アイマス':'The iDOLM@STER',
+'デレマス':'The iDOLM@STER Cinderella Girls',
+'ラブライブ':'Love Live! School Idol Project',
+'ユーフォ':'Hibike! Euphonium',
+'響けユーフォ':'Hibike! Euphonium',
+'メイドラゴン':'Kobayashi-san Chi no Maid Dragon',
+'にごリリ':'2.5-jigen no Ririsa',
+'負けヒロイン':'Make Heroine ga Oosugiru!',
+'マケイン':'Make Heroine ga Oosugiru!'
+};
+function aliasKey(s){return s.normalize('NFKC').toLowerCase().replace(/[\s　!！?？・･ー－―–‐:：\.。,'’“”「」『』()（）＆&]/g,'');}
+const aliasMap=new Map(Object.entries(aliases).map(([k,v])=>[aliasKey(k),v]));
+function resolvedSearch(q){return aliasMap.get(aliasKey(q))||q;}
+const charQuery=`query($id:Int,$page:Int){Media(id:$id,type:ANIME){id title{romaji english native} characters(page:$page,perPage:25,sort:[ROLE,ID]){pageInfo{hasNextPage currentPage}edges{role node{id name{first middle last full native alternative}gender image{large medium}siteUrl}}}}}`;
+async function api(query,variables,signal){let res=await fetch('https://graphql.anilist.co',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({query,variables}),signal});if(!res.ok)throw Error(res.status===429?'アクセスが集中しています。少し時間をおいて再実行してください。':`AniList APIエラー (HTTP ${res.status})`);let json=await res.json();if(json.errors?.length)throw Error(json.errors.map(x=>x.message).join(' / '));return json.data;}
+function status(text,kind=''){const e=$('status');e.textContent=text;e.className='status '+kind;}
+function title(m){return m?.title?.native||m?.title?.english||m?.title?.romaji||'名称不明';}
+function enTitle(m){return m?.title?.english||m?.title?.romaji||m?.title?.native||'anime';}
+function characterName(c){let n=c.name||{};let mode=$('nameMode').value;if(mode==='native')return n.native||n.full||'Unknown';if(mode==='english')return n.full||n.native||'Unknown';return n.full||[n.first,n.middle,n.last].filter(Boolean).join(' ')||n.native||'Unknown';}
+function canonical(s){return String(s||'').replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim();}
+function prompt(c){let series=enTitle(current);let p=[];if($('solo').checked)p.push('1girl','solo');p.push(canonical(characterName(c)));p.push(canonical(series));if(c.extra?.trim())p.push(c.extra.trim());if($('quality').checked)p.push('masterpiece','best quality');return p.filter(Boolean).join(', ');}
+function create(tag,cls,text){const e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+function img(src,cls,alt){const e=create('img',cls);e.src=src||'';e.alt=alt;e.loading='lazy';e.referrerPolicy='no-referrer';e.onerror=()=>{e.style.visibility='hidden'};return e;}
+function copyText(s){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(s).catch(()=>legacyCopy(s));return legacyCopy(s)}function legacyCopy(s){let el=create('textarea');el.value=s;el.setAttribute('readonly','');el.style.cssText='position:fixed;top:0;left:0;opacity:0;font-size:16px';document.body.appendChild(el);el.focus();el.select();el.setSelectionRange(0,el.value.length);let ok=document.execCommand('copy');el.remove();if(!ok)throw Error('コピーが許可されませんでした');return Promise.resolve();}
+function toast(btn,label){let old=btn.textContent;btn.textContent=label;setTimeout(()=>btn.textContent=old,1200)}
+function selected(){let mode=$('genderMode').value;return characters.filter(c=>{let g=(c.gender||'').toLowerCase();return mode==='all'||g==='female'||(mode==='female_unknown'&&!g);});}
+function render(){if(!current)return;let list=selected();$('results').classList.remove('hidden');$('resultTitle').textContent=title(current);$('count').textContent=`${list.length}名表示 / ${characters.length}名登録（性別による絞り込み）`;$('copyAll').disabled=$('download').disabled=$('randomPick').disabled=!list.length;if(randomId!==null&&!list.some(c=>c.id===randomId)){randomId=null;$('randomResult').classList.add('hidden');}let grid=$('grid');grid.replaceChildren();if(!list.length){grid.append(create('div','empty','該当するキャラクターがいません。表示対象を「女性＋性別未登録」に変えてお試しください。'));return;}let frag=document.createDocumentFragment();for(const c of list){let card=create('article','character'+(c.id===randomId?' picked':''));card.dataset.charId=String(c.id);let head=create('div','head');head.append(img(c.image,'portrait',characterName(c)));let det=create('div','details');det.append(create('h3','',characterName(c)));if(c.name?.native&&c.name.native!==characterName(c))det.append(create('div','native',c.name.native));det.append(create('span','chip',c.role==='MAIN'?'メイン':c.role==='SUPPORTING'?'サブ':'登場人物'));head.append(det);card.append(head);
+let lab=create('label','charlabel','追加する外見・衣装タグ（編集可）');lab.htmlFor='extra-'+c.id;card.append(lab);let extra=create('textarea','textarea extras');extra.id='extra-'+c.id;extra.rows=2;extra.placeholder='例：long blonde hair, blue eyes, school uniform';extra.value=c.extra||'';card.append(extra);let pl=create('label','charlabel','NovelAIプロンプト');card.append(pl);let out=create('textarea','textarea');out.rows=3;out.value=prompt(c);card.append(out);extra.addEventListener('input',()=>{c.extra=extra.value;out.value=prompt(c)});let row=create('div','row');let note=create('span','note','プロンプトは直接編集してコピーできます');let btn=create('button','secondary','コピー');btn.type='button';btn.addEventListener('click',async()=>{try{await copyText(out.value);toast(btn,'コピー済み')}catch(e){toast(btn,'コピー失敗')}});row.append(note,btn);card.append(row);frag.append(card);}grid.append(frag);}
+async function fetchCharacters(media){current=media;characters=[];let id=++requestId;let controller=new AbortController();abort?.abort();abort=controller;$('results').classList.add('hidden');randomId=null;$('randomResult').classList.add('hidden');status('キャラクターを取得しています…');$('selection').classList.add('hidden');try{let page=1;const ids=new Set();for(;page<=20;page++){const data=await api(charQuery,{id:media.id,page},controller.signal);if(id!==requestId)return;const collection=data?.Media?.characters;if(!collection)throw Error('キャラクターデータを取得できませんでした。');for(const edge of collection.edges||[]){let n=edge?.node;if(!n||ids.has(n.id))continue;ids.add(n.id);characters.push({...n,role:edge.role,extra:''});}status(`${characters.length}名の情報を取得中… (${page}ページ)`);if(!collection.pageInfo?.hasNextPage)break;await new Promise(r=>setTimeout(r,180));}status(`${characters.length}名の情報を取得しました。`,'success');render();$('results').scrollIntoView({behavior:'smooth',block:'start'});if(page>=20)$('bottomStatus').textContent='取得上限（500件）に達しました。';}catch(e){if(e.name==='AbortError')return;status('取得失敗：'+e.message,'error');if(characters.length)render();}}
+function drawMatches(){let m=$('matches');m.replaceChildren();for(const media of choices){let btn=create('button','match'+(current?.id===media.id?' active':''));btn.type='button';btn.append(img(media.coverImage?.medium,'','作品画像'));let body=create('span');body.append(create('strong','',title(media)));body.append(create('div','muted',`${media.seasonYear||'年不明'} · ${media.format||'ANIME'}`));btn.append(body);btn.addEventListener('click',()=>fetchCharacters(media));m.append(btn);} $('selection').classList.toggle('hidden',!choices.length);}
+$('searchForm').addEventListener('submit',async e=>{e.preventDefault();let original=$('animeTitle').value.trim();if(!original)return;let q=resolvedSearch(original);let id=++requestId;abort?.abort();const ctl=new AbortController();abort=ctl;$('searchBtn').disabled=true;$('results').classList.add('hidden');$('selection').classList.add('hidden');randomId=null;$('randomResult').classList.add('hidden');status(q===original?'作品を検索中…':`略称「${original}」を「${q}」として検索中…`);try{const data=await api(mediaSearch,{search:q},ctl.signal);if(id!==requestId)return;choices=data?.Page?.media||[];if(!choices.length){status('作品が見つかりません。別の表記（英語名・ローマ字名）をお試しください。','error');return;}drawMatches();status(`${choices.length}作品が見つかりました。作品を選択してください。`,'success');await fetchCharacters(choices[0]);drawMatches();}catch(err){if(err.name!=='AbortError')status('検索失敗：'+err.message+'。ネットワーク接続を確認してください。','error');}finally{if(id===requestId||!abort?.signal.aborted)$('searchBtn').disabled=false;}});
+function currentEditedPrompt(c){const card=Array.from(document.querySelectorAll('#grid .character')).find(e=>e.dataset.charId===String(c.id));return card?.querySelectorAll('textarea')[1]?.value||prompt(c);}
+$('randomPick').addEventListener('click',()=>{
+ const pool=selected();if(!pool.length)return;
+ // Crypto-backed unbiased selection where supported; repeat avoids same character if possible.
+ let eligible=pool.length>1&&randomId!==null?pool.filter(c=>c.id!==randomId):pool;
+ let index;
+ if(globalThis.crypto?.getRandomValues){const buf=new Uint32Array(1);const range=4294967296;const limit=Math.floor(range/eligible.length)*eligible.length;do{crypto.getRandomValues(buf);index=buf[0];}while(index>=limit);index%=eligible.length;}
+ else index=Math.floor(Math.random()*eligible.length);
+ const c=eligible[index];randomId=c.id;
+ document.querySelectorAll('#grid .character').forEach(el=>el.classList.toggle('picked',el.dataset.charId===String(c.id)));
+ const dest=$('randomResult');dest.replaceChildren();
+ const line=create('div','row');line.append(img(c.image,'','キャラクター画像'));
+ const info=create('div');info.append(create('div','muted','🎲 今回選ばれたキャラクター'),create('strong','',characterName(c)));if(c.name?.native)info.append(create('div','native',c.name.native));line.append(info);dest.append(line);
+ let output=create('textarea','textarea');output.rows=3;output.value=currentEditedPrompt(c);output.setAttribute('aria-label','選出キャラクターのプロンプト');dest.append(output);
+ const buttons=create('div','toolbar');buttons.style.marginTop='9px';const cp=create('button','secondary','選ばれた1人をコピー');cp.type='button';cp.addEventListener('click',async()=>{try{await copyText(output.value);toast(cp,'コピー済み')}catch(e){toast(cp,'コピー失敗')}});
+ const again=create('button','','もう一度抽選');again.type='button';again.addEventListener('click',()=>$('randomPick').click());buttons.append(cp,again);dest.append(buttons);
+ dest.classList.remove('hidden');dest.scrollIntoView({behavior:'smooth',block:'center'});
+});
+$('genderMode').addEventListener('change',render);$('nameMode').addEventListener('change',render);$('solo').addEventListener('change',render);$('quality').addEventListener('change',render);
+$('copyAll').addEventListener('click',async()=>{const cards=Array.from(document.querySelectorAll('#grid .character'));const text=cards.map((card,i)=>`${i+1}. ${card.querySelector('h3').textContent}\n${card.querySelectorAll('textarea')[1].value}`).join('\n\n');try{await copyText(text);toast($('copyAll'),'全件コピー済み')}catch(e){status('コピーに失敗しました。','error')}});
+$('download').addEventListener('click',()=>{let rows=[['作品','キャラクター','性別','NovelAIプロンプト']];for(const card of document.querySelectorAll('#grid .character')){const name=card.querySelector('h3').textContent;const c=selected().find(x=>characterName(x)===name);rows.push([title(current),name,c?.gender||'',card.querySelectorAll('textarea')[1].value]);}const csv='\ufeff'+rows.map(r=>r.map(x=>'"'+String(x||'').replaceAll('"','""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='novelai_characters_'+current.id+'.csv';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+})();
+</script>
+</body></html>
